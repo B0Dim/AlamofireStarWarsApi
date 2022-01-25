@@ -16,6 +16,7 @@
 		0828801D279F150D00D53C97 /* HeroesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0828801C279F150D00D53C97 /* HeroesViewController.swift */; };
 		0828801F279F151F00D53C97 /* Heroes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0828801E279F151F00D53C97 /* Heroes.swift */; };
 		08288021279F192F00D53C97 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08288020279F192F00D53C97 /* NetworkManager.swift */; };
+		9A1077FC05BE9EF2958FF45C /* Pods_StarWarsApi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D20DF9A84076FD6CFFCF00B /* Pods_StarWarsApi.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,9 @@
 		0828801C279F150D00D53C97 /* HeroesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesViewController.swift; sourceTree = "<group>"; };
 		0828801E279F151F00D53C97 /* Heroes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Heroes.swift; sourceTree = "<group>"; };
 		08288020279F192F00D53C97 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		1A1A2BB8177CD8D6DB0DB04A /* Pods-StarWarsApi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarWarsApi.release.xcconfig"; path = "Target Support Files/Pods-StarWarsApi/Pods-StarWarsApi.release.xcconfig"; sourceTree = "<group>"; };
+		6D20DF9A84076FD6CFFCF00B /* Pods_StarWarsApi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StarWarsApi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		813F772C66580DCEB49C02B8 /* Pods-StarWarsApi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarWarsApi.debug.xcconfig"; path = "Target Support Files/Pods-StarWarsApi/Pods-StarWarsApi.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A1077FC05BE9EF2958FF45C /* Pods_StarWarsApi.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,6 +53,8 @@
 			children = (
 				08287FFF279F12AD00D53C97 /* StarWarsApi */,
 				08287FFE279F12AD00D53C97 /* Products */,
+				5E5F28E7620CD0326BE73605 /* Pods */,
+				4F6951919BE7076FDE7BD818 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -124,6 +131,24 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		4F6951919BE7076FDE7BD818 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6D20DF9A84076FD6CFFCF00B /* Pods_StarWarsApi.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5E5F28E7620CD0326BE73605 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				813F772C66580DCEB49C02B8 /* Pods-StarWarsApi.debug.xcconfig */,
+				1A1A2BB8177CD8D6DB0DB04A /* Pods-StarWarsApi.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -131,9 +156,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 08288011279F12AE00D53C97 /* Build configuration list for PBXNativeTarget "StarWarsApi" */;
 			buildPhases = (
+				EABFADA9B3FFED164C8F6EF5 /* [CP] Check Pods Manifest.lock */,
 				08287FF9279F12AD00D53C97 /* Sources */,
 				08287FFA279F12AD00D53C97 /* Frameworks */,
 				08287FFB279F12AD00D53C97 /* Resources */,
+				50D49D8CD1EAA08536437702 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -189,6 +216,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		50D49D8CD1EAA08536437702 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StarWarsApi/Pods-StarWarsApi-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StarWarsApi/Pods-StarWarsApi-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StarWarsApi/Pods-StarWarsApi-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EABFADA9B3FFED164C8F6EF5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StarWarsApi-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		08287FF9279F12AD00D53C97 /* Sources */ = {
@@ -344,6 +413,7 @@
 		};
 		08288012279F12AE00D53C97 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 813F772C66580DCEB49C02B8 /* Pods-StarWarsApi.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -372,6 +442,7 @@
 		};
 		08288013279F12AE00D53C97 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1A1A2BB8177CD8D6DB0DB04A /* Pods-StarWarsApi.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

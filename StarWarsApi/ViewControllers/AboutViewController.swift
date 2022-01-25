@@ -21,10 +21,16 @@ class AboutViewController: UIViewController {
     }
     
     private func sendRequest() {
-        NetworkManager.shared.fetchDataHero(url: url) { hero in
-            DispatchQueue.main.async {
-                self.hero = hero.result.properties
+        NetworkManager.shared.fetchDataWithAlamofire(url) { result in
+            switch result {
+            case .success(let hero):
+                let properties = HeroResult.getHeroProperties(from: hero)
+                let heroProperties = heroProperties.getHero(from: properties)
+                guard let hero = heroProperties else { return }
+                self.hero = hero
                 self.setAboutData()
+            case .failure(let error):
+                print(error)
             }
         }
     }

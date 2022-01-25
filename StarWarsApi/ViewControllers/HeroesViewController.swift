@@ -47,11 +47,15 @@ class HeroesViewController: UITableViewController {
 extension HeroesViewController {
     
     private func sendRequest() {
-        
-        NetworkManager.shared.fetchDataHeroes { heroes in
-            DispatchQueue.main.async {
-                self.heroes = heroes
+  
+        let url = "https://www.swapi.tech/api/people"
+        NetworkManager.shared.fetchDataWithAlamofire(url) { result in
+            switch result {
+            case .success(let heroes):
+                self.heroes = HeroesResult.getHeroes(from: heroes)
                 self.tableView.reloadData()
+            case .failure(let error):
+                print(error)
             }
         }
     }
