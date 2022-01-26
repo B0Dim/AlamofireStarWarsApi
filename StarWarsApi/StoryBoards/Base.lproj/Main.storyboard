@@ -48,24 +48,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0EN-tn-kgQ">
+                                <rect key="frame" x="30" y="140" width="354" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="BNq-6m-A1L"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="CornerRadius">
+                                        <integer key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="QnG-e9-xEp">
+                                <rect key="frame" x="197" y="255" width="20" height="20"/>
+                            </activityIndicatorView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NfD-jj-1tc">
-                                <rect key="frame" x="16" y="170" width="382" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="30" y="406" width="368" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                <color key="textColor" red="0.3353204709" green="0.3294184" blue="0.82914370569999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Fo0-U9-54F"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="NfD-jj-1tc" firstAttribute="top" secondItem="Fo0-U9-54F" secondAttribute="top" constant="30" id="ESU-H8-VPr"/>
+                            <constraint firstItem="NfD-jj-1tc" firstAttribute="top" secondItem="0EN-tn-kgQ" secondAttribute="bottom" constant="16" id="1Mt-p9-YAU"/>
+                            <constraint firstItem="0EN-tn-kgQ" firstAttribute="leading" secondItem="Fo0-U9-54F" secondAttribute="leading" constant="30" id="99h-Ir-sTB"/>
                             <constraint firstItem="Fo0-U9-54F" firstAttribute="trailing" secondItem="NfD-jj-1tc" secondAttribute="trailing" constant="16" id="bV9-ah-1Bo"/>
-                            <constraint firstItem="NfD-jj-1tc" firstAttribute="leading" secondItem="Fo0-U9-54F" secondAttribute="leading" constant="16" id="eLe-sm-KMC"/>
+                            <constraint firstItem="NfD-jj-1tc" firstAttribute="leading" secondItem="0EN-tn-kgQ" secondAttribute="leading" id="kj2-mn-IoY"/>
+                            <constraint firstItem="Fo0-U9-54F" firstAttribute="trailing" secondItem="0EN-tn-kgQ" secondAttribute="trailing" constant="30" id="roZ-aN-Tww"/>
+                            <constraint firstItem="QnG-e9-xEp" firstAttribute="centerY" secondItem="0EN-tn-kgQ" secondAttribute="centerY" id="wpl-u8-JWX"/>
+                            <constraint firstItem="0EN-tn-kgQ" firstAttribute="top" secondItem="Fo0-U9-54F" secondAttribute="top" id="ysd-44-t9x"/>
+                            <constraint firstItem="QnG-e9-xEp" firstAttribute="centerX" secondItem="0EN-tn-kgQ" secondAttribute="centerX" id="zGw-FV-5iu"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="About" id="RDY-QF-PDv"/>
                     <connections>
                         <outlet property="aboutDetailLabel" destination="NfD-jj-1tc" id="vrA-MD-ht1"/>
+                        <outlet property="activityIndicator" destination="QnG-e9-xEp" id="pHe-1e-fnF"/>
+                        <outlet property="imageHero" destination="0EN-tn-kgQ" id="DXF-2M-rkh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8cV-BX-BsK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -80,6 +101,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="mdL-Uq-Rex">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.3353204709" green="0.3294184" blue="0.82914370569999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

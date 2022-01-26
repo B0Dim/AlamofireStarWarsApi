@@ -9,7 +9,7 @@ import UIKit
 
 class HeroesViewController: UITableViewController {
 
-    var heroes: [Heroes] = []
+    private var heroes: [Heroes] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,8 +48,7 @@ extension HeroesViewController {
     
     private func sendRequest() {
   
-        let url = "https://www.swapi.tech/api/people"
-        NetworkManager.shared.fetchDataWithAlamofire(url) { result in
+        NetworkManager.shared.fetchDataWithAlamofire(Link.heroes.rawValue) { result in
             switch result {
             case .success(let heroes):
                 self.heroes = HeroesResult.getHeroes(from: heroes)

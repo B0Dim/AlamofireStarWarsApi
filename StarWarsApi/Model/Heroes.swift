@@ -7,6 +7,23 @@
 
 import Foundation
 
+enum Link: String {
+    case heroes = "https://www.swapi.tech/api/people"
+}
+
+enum ImageHeroes: String {
+    case luke = "https://static.tvtropes.org/pmwiki/pub/images/luke_the_hero_small.png"
+    case c3po = "https://media.istockphoto.com/photos/-picture-id477975108?k=20&m=477975108&s=170667a&w=0&h=jbRct72usQSKuJ3uoxcw4CRpjYkpdRquIim4P_nw45c="
+    case r2d2 = "https://upload.wikimedia.org/wikipedia/ru/3/39/R2-D2_Droid.png"
+    case dart = "https://s7.orientaltrading.com/is/image/OrientalTrading/VIEWER_ZOOM/darth-vader-cardboard-stand-up~13577316"
+    case leia = "https://static.tvtropes.org/pmwiki/pub/images/leia_41.jpg"
+    case owen = "https://static.wikia.nocookie.net/starwars/images/e/eb/OwenCardTrader.png/revision/latest?cb=20171108050140"
+    case beru = "https://static.wikia.nocookie.net/starwars/images/c/cc/BeruCardTrader.png/revision/latest?cb=20170713063118"
+    case r5d4 = "https://static.wikia.nocookie.net/starwars/images/c/cb/R5-D4_Sideshow.png/revision/latest?cb=20160809033145"
+    case biggs = "https://static.wikia.nocookie.net/rustarwars/images/2/20/Biggs.jpg/revision/latest?cb=20120903152541"
+    case obiwan = "https://idsb.tmgrup.com.tr/ly/uploads/images/2021/11/14/thumbs/800x531/159258.jpg"
+}
+
 struct HeroesResult: Decodable {
     let total_pages: Int?
     let next: String?
@@ -73,14 +90,14 @@ struct Hero: Decodable {
     
     var description: String {
         """
-        name: \(name ?? "")
-        height: \(height ?? "")
-        mass: \(mass ?? "")
-        hair_color: \(hair_color ?? "")
-        skin_color: \(skin_color ?? "")
-        eye_color: \(eye_color ?? "")
-        birth_year: \(birth_year ?? "")
-        gender: \(gender ?? "")
+        Name: \(name ?? "")
+        Height: \(height ?? "")
+        Mass: \(mass ?? "")
+        Hair color: \(hair_color ?? "")
+        Skin color: \(skin_color ?? "")
+        Eye color: \(eye_color ?? "")
+        Birth year: \(birth_year ?? "")
+        Gender: \(gender ?? "")
         """
     }
 }
