@@ -32,7 +32,7 @@ struct HeroesResult: Decodable {
     static func getHeroes(from value: Any) -> [Heroes] {
         guard let data = value as? [String: Any] else { return  [] }
         guard let results = data["results"] as? Array<Any> else { return [] }
-        return results.compactMap { Heroes(dataHeroes: $0 as? [String : Any] ?? [:]) }
+        return results.compactMap { Heroes(dataHeroes: $0 as? [String : String] ?? [:]) }
     }
 }
 
@@ -40,9 +40,9 @@ struct Heroes: Decodable {
     let name: String?
     let url: String?
         
-    init(dataHeroes: [String: Any]) {
-        name = dataHeroes["name"] as? String
-        url = dataHeroes["url"] as? String
+    init(dataHeroes: [String: String]) {
+        name = dataHeroes["name"]
+        url = dataHeroes["url"]
     }
 }
 
@@ -62,7 +62,7 @@ struct heroProperties: Decodable {
     
     static func getHero(from value: Any) -> Hero? {
         guard let data = value as? [String: Any] else { return nil }
-        guard let properties = data["properties"] as? [String: Any] else { return nil }
+        guard let properties = data["properties"] as? [String: String] else { return nil }
         return Hero(dataHero: properties)
     }
 }
@@ -77,15 +77,15 @@ struct Hero: Decodable {
     let gender: String?
     let name: String?
     
-    init(dataHero: [String: Any]) {
-        height = dataHero["height"] as? String
-        mass = dataHero["mass"] as? String
-        hair_color = dataHero["hair_color"] as? String
-        skin_color = dataHero["skin_color"] as? String
-        eye_color = dataHero["eye_color"] as? String
-        birth_year = dataHero["birth_year"] as? String
-        gender = dataHero["gender"] as? String
-        name = dataHero["name"] as? String
+    init(dataHero: [String: String]) {
+        height = dataHero["height"]
+        mass = dataHero["mass"]
+        hair_color = dataHero["hair_color"]
+        skin_color = dataHero["skin_color"]
+        eye_color = dataHero["eye_color"]
+        birth_year = dataHero["birth_year"]
+        gender = dataHero["gender"]
+        name = dataHero["name"]
     }
     
     var description: String {
